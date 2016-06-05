@@ -17,7 +17,7 @@ public class Cards : MonoBehaviour {
 			cards.RemoveAt(0);
 			startCardCount++;
 		}
-		Test ();
+		//Test ();
 	}
 	
 	// Update is called once per frame

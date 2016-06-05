@@ -17,8 +17,6 @@ public class Board : MonoBehaviour {
 	void Start () {
 		myMap = new Map ();
 		enemyMap = new Map();
-		myMap.avanguard [2] = 1;
-		Debug.Log(myMap.avanguard[2].ToString());
 	}
 	
 	// Update is called once per frame
