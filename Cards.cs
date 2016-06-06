@@ -7,16 +7,17 @@ public class Cards : MonoBehaviour {
 
 	private List<int> cards = new List<int>();
 	private List<int> cardsOnHand = new List<int>();
-
+	public List<GameObject> cardPrefabs = new List<GameObject>();
 	// Use this for initialization
 	void Start () {
 		cards = new Shuffle ().GetDeck ();
-		int startCardCount = 0;
-		while (startCardCount < 5) {
+		int startCardCount = 5;
+		while (startCardCount > 0) {
 			cardsOnHand.Add(cards[0]);
 			cards.RemoveAt(0);
-			startCardCount++;
+			startCardCount--;
 		}
+		GetComponent<HandVisualize> ().StartCardsGetting ();
 		//Test ();
 	}
 	
@@ -32,5 +33,8 @@ public class Cards : MonoBehaviour {
 		}
 		Debug.Log (testStr);
 
+	}
+	public List<int> GetCardsOnHand(){
+		return cardsOnHand;
 	}
 }
